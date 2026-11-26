@@ -36,6 +36,7 @@ DOWNLOAD_DIR.mkdir(exist_ok=True)
 jobs: Dict[str, Dict[str, Any]] = {}
 
 
+
 class ExtractRequest(BaseModel):
     url: str
 
@@ -144,6 +145,11 @@ def run_extraction_worker(job_id: str, url: str, base_url: str):
             },
             {"key": "FFmpegMetadata"},
         ],
+        "extractor_args": {
+    "youtube": {
+        "player_client": ["android", "web", "tv"],
+    }
+},
     }
 
     try:
