@@ -18,7 +18,7 @@ app = FastAPI(title="YouTube Audio Pipeline")
 
 # Reads comma-separated origins in production (e.g., "https://your-app.vercel.app")
 raw_origins = os.getenv(
-    "ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173"
+    "ALLOWED_ORIGINS", "http://localhost:5173,https://frontend-six-delta-37.vercel.app/"
 )
 allowed_origins = [origin.strip().rstrip("/") for origin in raw_origins.split(",") if origin.strip()]
 
